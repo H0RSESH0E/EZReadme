@@ -1,0 +1,23 @@
+{
+  "name": "09-cli-readme-generator",
+  "version": "1.0.0",
+  "description": "An automatic CLI README.md file generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H0RSESH0E/EZReadme.git"
+  },
+  "author": "David Baron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H0RSESH0E/EZReadme/issues"
+  },
+  "homepage": "https://github.com/H0RSESH0E/EZReadme#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "inquirer": "^8.2.0"
+  }
+}
