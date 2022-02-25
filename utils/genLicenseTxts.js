@@ -1,17 +1,17 @@
-  const renderFullLicenseText = (userDataObj) => {
-    var today = new Date();
-    var date = today.getFullYear();
-    let {fullLicenseText: fLT } = userDataObj
+const renderFullLicenseText = (userDataObj) => {
+  var today = new Date();
+  var date = today.getFullYear();
+  let { fullLicenseText: fLT } = userDataObj
 
-    let { licenseName: lN } = userDataObj;
+  let { licenseName: lN } = userDataObj;
 
-    lN ? lN : lN = userDataObj.userName;
-    fLT = fLT.replace('[year]', `${date}`);
-    fLT = fLT.replace('[fullname]', `${lN}`);
+  lN ? lN : lN = userDataObj.userName;
+  fLT = fLT.replace('[year]', `${date}`);
+  fLT = fLT.replace('[fullname]', `${lN}`);
 
-    userDataObj.fullLicenseText = fLT
+  userDataObj.fullLicenseText = fLT
 
-    return userDataObj;
-  }
+  return userDataObj;
+}
 
-  module.exports = { renderFullLicenseText };
+module.exports = { renderFullLicenseText };

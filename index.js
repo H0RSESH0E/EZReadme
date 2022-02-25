@@ -151,11 +151,15 @@ function init() {
         .then(userDataObj => getLicenseText(userDataObj))
         .then(userDataObj => renderFullLicenseText(userDataObj))
         .then(userDataObj => {
-            writeFile('License.txt', userDataObj.fullLicenseText);
+            writeFile('License.txt', userDataObj.fullLicenseText)
+            .then(writeFileResponse => {
+                console.log(writeFileResponse.message)
+            });
             return userDataObj;
         })
         .then(userDataObj => generateMarkdown(userDataObj))
         .then(response => writeFile('README.md', response))
+        .then(writeFileResponse => console.log(writeFileResponse.message))
         .catch(err => console.log(err));
 }
 

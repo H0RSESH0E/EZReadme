@@ -3,8 +3,8 @@ const { langShieldsObj } = require('./languages');
 
 const renderScreenshot = (screenshot, title) => {
     return screenshot ? `<img src="${screenshot}" alt="${title} application screenshot" width="600"/>  ` : '';
-  }
-  
+}
+
 
 // format GitHub details user pic
 const renderGhUserPic = (userName) => {
@@ -21,26 +21,26 @@ const renderLicBadge = (licenseType) => {
 }
 
 const renderLicenseContent = fullLicenseText => {
-    var trimmedBody = fullLicenseText.substring(0, 500);
+    var trimmedBody = fullLicenseText.substring(0, 250);
     return `
     ${trimmedBody}  
-    [Full License Text](license.txt)`
-  }
+    [ . . . Click here to view the full license attached to this project.](license.txt)`
+}
 
 const renderLanguageBadges = languages => {
     var shieldsArr = langShieldsObj();
     var markdownToReturn = '';
-    for (var i = 0; i < languages.length; i++) {      
+    for (var i = 0; i < languages.length; i++) {
         markdownToReturn +=
-        `${shieldsArr[languages[i]]} `;
+            `${shieldsArr[languages[i]]} `;
     }
     return markdownToReturn;
 }
 
-function generateMarkdown (userResponsesObject) {
+function generateMarkdown(userResponsesObject) {
 
     const { title, about, screenshot, languages, install, usage, licenseType, otherName, licenseName, contrib, test, userName, email, fullLicenseText } = userResponsesObject;
-  console.log(licenseType);
+
     return `
   # <Your-Project-Title>${title}
   ## An application by ${userName} 
@@ -60,19 +60,17 @@ function generateMarkdown (userResponsesObject) {
   ## Usage
   ${usage}
   ## License
-  ${licenseType}  
   ${renderLicenseContent(fullLicenseText)}  
   ## Contributing
   ${contrib}
   ## Tests
   ${test}
   ## Questions
-  Please direct any questions about the application or concerns about how to contribute to its development to me by email:  
-  **${email}**  
+  Questions or concerns about the project or how to contribute to its development can be emailed to: **${email}**  
   &nbsp;  
   <img src="${renderGhUserPic(userName)}" alt="user avatar" width="60"/>  
-  **${renderGhUserLink(userName)}**
+  **[Check out my repositories on GitHub](${renderGhUserLink(userName)})**
     `
 }
-  
+
 module.exports = { generateMarkdown }
