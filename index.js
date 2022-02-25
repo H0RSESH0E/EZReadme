@@ -1,13 +1,15 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { generateMarkdown } = require('./utils/generateMarkdown');
-const { getLicenseTypes } = require('./utils/generateMarkdown');
-const { getLicenseText } = require('./utils/generateMarkdown');
 
+const { getLicenseTypes, getLicenseText } = require('./utils/apiCalls');
+const { renderFullLicenseText } = require('./utils/genLicenseTxts');
+const { generateMarkdown } = require('./utils/genReadMe');
+const { writeFile } = require('./utils/writeFile');
+const { languages } = require('./utils/languages');
 
 // Inquirer function
-const promptUser = (types) => {
+const promptUser = (types, languages) => {
     return inquirer.prompt([{
         type: 'input',
         name: 'title',
@@ -53,7 +55,7 @@ const promptUser = (types) => {
         type: 'checkbox',
         name: 'languages',
         message: 'What languages did you use to build this project? (Check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+        choices: languages
     },
     
     // installation inst
@@ -140,35 +142,22 @@ const promptUser = (types) => {
     ]);
 }
 
-// TODO: Create a function to write README file
-const writeFile = (fileName, fileContent) => {
-    return new Promise((resolve, reject) => {
-      fs.writeFile(`${fileName}`, fileContent, err => {
-        if (err) {
-          reject(err);
-          return;
-        }
-  
-        resolve({
-          ok: true,
-          message: `${fileName} was created and saved in this folder.`
-        });
-      });
-    });
-  };
+
 
 // TODO: Create a function to initialize app
 function init() {
     getLicenseTypes()
-    .then(liscenseTypes => promptUser(liscenseTypes))
-    .then(userData => {
-        console.log(userData);
-        getLicenseText(userData).then(
-        return generateMarkdown(userData));
-    })
-    .then(answers => writeFile('README.md', answers))
-    .catch(err => console.log(err));
- }
+        .then(liscenseTypes => promptUser(liscenseTypes, languages))
+        .then(userDataObj => getLicenseText(userDataObj))
+        .then(userDataObj => renderFullLicenseText(userDataObj))
+        .then(userDataObj => {
+            writeFile('License.txt', userDataObj.fullLicenseText);
+            return userDataObj;
+        })
+        .then(userDataObj => generateMarkdown(userDataObj))
+        .then(response => writeFile('README.md', response))
+        .catch(err => console.log(err));
+}
 
 // Function call to initialize app
 init();
