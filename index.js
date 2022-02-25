@@ -3,6 +3,8 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { generateMarkdown } = require('./utils/generateMarkdown');
 const { getLicenseTypes } = require('./utils/generateMarkdown');
+const { getLicenseText } = require('./utils/generateMarkdown');
+
 
 // Inquirer function
 const promptUser = (types) => {
@@ -161,7 +163,8 @@ function init() {
     .then(liscenseTypes => promptUser(liscenseTypes))
     .then(userData => {
         console.log(userData);
-        return generateMarkdown(userData);
+        getLicenseText(userData).then(
+        return generateMarkdown(userData));
     })
     .then(answers => writeFile('README.md', answers))
     .catch(err => console.log(err));

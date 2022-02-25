@@ -53,6 +53,12 @@ const getLicenseText = async (userName, licenseName, licenseType) => {
   return updatedBody;
 }
 
+const trimLicenseContent = fullLicenseText => {
+  var trimmedBody = fullLicenseText.substring(0, 500);
+  return `
+  ${trimmedBody}  
+  [Full License Text](license.txt)`
+}
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
 
@@ -122,5 +128,5 @@ module.exports = {
   generateMarkdown,
   gHuserLink,
   gHuserPic,
-  getLicenseTypes
+  getLicenseTypes,
 };
