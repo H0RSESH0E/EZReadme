@@ -42,8 +42,8 @@ function generateMarkdown(userResponsesObject) {
     const { title, about, screenshot, languages, install, usage, licenseType, otherName, licenseName, contrib, test, userName, email, fullLicenseText } = userResponsesObject;
 
     return `
-  # <Your-Project-Title>${title}
-  ## An application by ${userName} 
+  # ${title}
+  ### An application by ${userName} 
   &nbsp;&nbsp;
   ## Description  
   ${about}  

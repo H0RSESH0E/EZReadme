@@ -1,5 +1,5 @@
 {
-  "name": "09-cli-readme-generator",
+  "name": "E Z README.md",
   "version": "1.0.0",
   "description": "A quick and easy way to produce a professional README file",
   "main": "index.js",
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/H0RSESH0E/EZReadme#readme",
   "dependencies": {
+    "asciiart-logo": "^0.2.6",
     "axios": "^0.26.0",
+    "chalk": "^4.0.0",
     "inquirer": "^8.2.0"
   }
 }

@@ -1,12 +1,32 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const logo = require('asciiart-logo');
+const config = require('./package.json');
+const chalk = require('chalk');
+
+// const chalk = require('./node_modules/chalk/source/index');
+// import {chalk} from './node_modules/chalk/source/index.js';
+const log = console.log;
 
 const { getLicenseTypes, getLicenseText } = require('./utils/apiCalls');
 const { renderFullLicenseText } = require('./utils/genLicenseTxts');
 const { generateMarkdown } = require('./utils/genReadMe');
 const { writeFile } = require('./utils/writeFile');
 const { languages } = require('./utils/languages');
+
+const titles = {
+    name: 'EZ README',
+    font: 'Star Wars',
+    lineChars: 18,
+    padding: 2,
+    margin: 1,
+    borderColor: 'white',
+    logoColor: 'blue',
+    textColor: 'white'
+
+}
+
 
 // Inquirer function
 const promptUser = (types, languages) => {
@@ -151,7 +171,7 @@ function init() {
         .then(userDataObj => getLicenseText(userDataObj))
         .then(userDataObj => renderFullLicenseText(userDataObj))
         .then(userDataObj => {
-            writeFile('License.txt', userDataObj.fullLicenseText)
+            writeFile('license.txt', userDataObj.fullLicenseText)
             .then(writeFileResponse => {
                 console.log(writeFileResponse.message)
             });
@@ -164,4 +184,6 @@ function init() {
 }
 
 // Function call to initialize app
+log(logo(titles).emptyLine().right('ver 1.0.0').render());
+
 init();
