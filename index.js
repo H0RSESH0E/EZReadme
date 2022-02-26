@@ -173,7 +173,9 @@ function init() {
         .then(userDataObj => {
             writeFile('license.txt', userDataObj.fullLicenseText)
             .then(writeFileResponse => {
-                console.log(writeFileResponse.message)
+                console.log("");
+                console.log("-----------------------");
+                console.log(writeFileResponse.message);
             });
             return userDataObj;
         })
