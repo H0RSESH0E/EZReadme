@@ -1,40 +1,40 @@
 
-# 56bb63bq
-## An application by bt4  
+# EZ README
+## An application by H0RSESH0E  
 &nbsp;  
-[<img src='https://img.shields.io/badge/license-Boost Software License 1.0-blueviolet' alt="user avatar" height="20"/>](#license)  
+[<img src='https://img.shields.io/badge/license-MIT License-blueviolet' alt="user avatar" height="20"/>](#license)  
 &nbsp;&nbsp;  
 ## Table of Contents
 #### [Description](#description)  -  [Installation](#installation)  -  [Usage](#usage) - [License](#license) - [Contributing](#contributing) - [Tests](#tests) - [Questions](#questions)
 &nbsp;  
 ## Description  
-qb4  
+This application is a quick and easy way to generate README.md and license.txt files for any programing application. It includes a default screenshot option, support for license and language badges, integration with GitHub and creation of a separate license.txt file.  
 &nbsp;  
-<img src="./assets/images/screenshot.png" alt="56bb63bq application screenshot" width="600"/>    
-![Apache Groovy](https://img.shields.io/badge/Apache%20Groovy-4298B8.svg?style=for-the-badge&logo=Apache+Groovy&logoColor=white)   
+<img src="./assets/images/screenshot.png" alt="EZ README application screenshot" width="600"/>    
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)   
 &nbsp;  
 ## Installation
-b5w4  
+Download or clone the application files from the GitHub repository, install node.js and initialize the directory for npm and download the necessary modules.  
 &nbsp;  
 ## Usage
-qb5  
+Use this application to quickly produce well formatted and informative README.md files with accompanying license.txt files.  
 &nbsp;  
 ## License  
 
-**Boost Software License 1.0**  
-A simple permissive license only requiring preservation of copyright and license notices for source (and not binary) distribution. Licensed works, modifications, and larger works may be distributed under different terms and without source code.  
+**MIT License**  
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.  
 [View the full license here.](./LICENSE/license.txt)  
 &nbsp;  
 ## Contributing
-qb4qb4  
+There are no special requirements for contribution. Please respect the licensing conditions.  
 &nbsp;  
 ## Tests
-qbt4  
+Testing of the program is only manual at this time.  
 &nbsp;  
 ## Questions
-Questions or concerns about the project or how to contribute to its development can be emailed to: **bt**  
+Questions or concerns about the project or how to contribute to its development can be emailed to: **dcpb777@gmail.com**  
 &nbsp;  
 &nbsp;  
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)  
-<img src="https://github.com/bt4.png" alt="user avatar" width="95"/>  
-**[Visit me on GitHub](https://github.com/bt4)**  
+<img src="https://github.com/H0RSESH0E.png" alt="user avatar" width="95"/>  
+**[Visit me on GitHub](https://github.com/H0RSESH0E)**  
