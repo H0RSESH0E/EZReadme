@@ -1,3 +1,9 @@
+// Originally conceived as a more sophisticated repackager of the full license texts, 
+// this relatively simple function was modularized in anticipation of more extensive 
+// customization of the base text
+
+// This function adds the current date and users legal or user name 
+// to the full license text
 const renderFullLicenseText = (userDataObj) => {
   var today = new Date();
   var date = today.getFullYear();

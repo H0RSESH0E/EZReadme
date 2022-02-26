@@ -1,12 +1,11 @@
+// Application specific modules
 const { langShieldsObj } = require('./languages');
 
-
+// short template functions to render mardown text for use in the final template
 const renderScreenshot = (screenshot, title) => {
     return screenshot ? `<img src="${screenshot}" alt="${title} application screenshot" width="600"/>  ` : '';
 }
 
-
-// format GitHub details user pic
 const renderGhUserPic = (userName) => {
     return `https://github.com/${userName}.png`
 }
@@ -20,11 +19,12 @@ const renderLicBadge = (licenseType) => {
     return `[<img src='https://img.shields.io/badge/license-${validString}-blueviolet' alt="user avatar" height="20"/>](#license)`
 }
 
-const renderLicenseContent = fullLicenseText => {
-    var trimmedBody = fullLicenseText.substring(0, 250);
+const renderLicenseContent = (licenseType, licenseDescription) => {
+    var trimmedBody = licenseDescription.substring(0, 250);
     return `
+**${licenseType}**  
 ${trimmedBody}  
-    [ . . . Click here to view the full license attached to this project.](license.txt)`
+[View the full license here.](./LICENSE/license.txt)`
 }
 
 const renderLanguageBadges = languages => {
@@ -37,10 +37,15 @@ const renderLanguageBadges = languages => {
     return markdownToReturn;
 }
 
+
+// Master template function to render the markdown file contents
 function generateMarkdown(userResponsesObject) {
 
-    var { title, about, screenshot, languages, install, usage, licenseType, otherName, licenseName, contrib, test, userName, email, fullLicenseText } = userResponsesObject;
+    var { title, about, screenshot, languages, install, usage, licenseType, contrib, test, userName, email, licenseDescription } = userResponsesObject;
+    
+    // Quick prep of input to improve likelyhood of viability
     userName = userName.trim();
+
     return `
 # ${title}
 ## An application by ${userName}  
@@ -63,7 +68,7 @@ ${install}
 ${usage}  
 &nbsp;  
 ## License  
-${renderLicenseContent(fullLicenseText)}  
+${renderLicenseContent(licenseType, licenseDescription)}  
 &nbsp;  
 ## Contributing
 ${contrib}  
@@ -76,7 +81,7 @@ Questions or concerns about the project or how to contribute to its development 
 &nbsp;  
 &nbsp;  
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)  
-<img src="${renderGhUserPic(userName)}" alt="user avatar" width="100"/>  
+<img src="${renderGhUserPic(userName)}" alt="user avatar" width="95"/>  
 **[Visit me on GitHub](${renderGhUserLink(userName)})**  
 `
 }

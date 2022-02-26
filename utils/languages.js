@@ -1,3 +1,4 @@
+// arrays of data for language types and markdown links to badges for each
 const languages = ['Apache Groovy', 'C', 'C#', 'C++', 'Crystal', 'CSS3', 'Clojure', 'Dart', 'Elixir', 'Elm', 'Erlang', 'Fortran', 'Go/Golang', 'GraphQL', 'Haskell', 'HTML5', 'Java', 'JavaScript', 'Julia', 'Kotlin', 'LaTeX', 'Lua', 'Markdown', 'Nim', 'Octave', 'PHP', 'Perl', 'Python', 'R', 'Ruby', 'Rust', 'Scala', 'Shell Script', 'Solidity', 'Swift', 'TypeScript', 'Zig']
 
 const markdown = ['![Apache Groovy](https://img.shields.io/badge/Apache%20Groovy-4298B8.svg?style=for-the-badge&logo=Apache+Groovy&logoColor=white)',
@@ -39,6 +40,7 @@ const markdown = ['![Apache Groovy](https://img.shields.io/badge/Apache%20Groovy
     '![Zig](https://img.shields.io/badge/Zig-%23F7A41D.svg?style=for-the-badge&logo=zig&logoColor=white)'
 ]
 
+// compiles the arrays as ordered pairs and creates an object for the genReadMe file
 function langShieldsObj () {
     var arrOfArr = [];
     for (var i = 0; i < languages.length; i++) {

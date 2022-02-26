@@ -1,5 +1,7 @@
+// Packages needed for this application
 const axios = require("axios");
 
+// Object to transfer data between the functions of this module
 var licenseUrlObj = {};
 
 const getLicenseTypes = async () => {
@@ -22,11 +24,9 @@ const getLicenseTypes = async () => {
     let none = "-- No License --";
     licenseTypes.push(none);
     return licenseTypes;
-}
+};
 
 const getLicenseText = async (userDataObj) => {
-    var today = new Date();
-    var date = today.getFullYear();
 
     const { licenseType } = userDataObj;
 
@@ -36,13 +36,14 @@ const getLicenseText = async (userDataObj) => {
     const licenseUrl = licenseUrlObj[licenseType];
     const response = await axios.get(licenseUrl);
 
-    var { body } = response.data;
+    var { body, description } = response.data;
 
     userDataObj.fullLicenseText = body;
+    userDataObj.licenseDescription = description;
 
     return userDataObj;
     }
-}
+};
 
 module.exports = {
     getLicenseTypes,

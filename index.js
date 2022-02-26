@@ -1,20 +1,24 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const logo = require('asciiart-logo');
 const config = require('./package.json');
 const chalk = require('chalk');
 
-// const chalk = require('./node_modules/chalk/source/index');
-// import {chalk} from './node_modules/chalk/source/index.js';
-const log = console.log;
-
+// Application specific modules
 const { getLicenseTypes, getLicenseText } = require('./utils/apiCalls');
 const { renderFullLicenseText } = require('./utils/genLicenseTxts');
 const { generateMarkdown } = require('./utils/genReadMe');
 const { writeFile } = require('./utils/writeFile');
+const { checkAndMakeDirectory } = require('./utils/mkdir');
+
+// Database variable
 const { languages } = require('./utils/languages');
 
+// keystroke saving variable
+const log = console.log;
+
+// Splash screen configuration object for ASCIart-logo module
 const titles = {
     name: 'EZ README',
     font: 'Star Wars',
@@ -22,13 +26,11 @@ const titles = {
     padding: 2,
     margin: 1,
     borderColor: 'white',
-    logoColor: 'blue',
-    textColor: 'white'
+    logoColor: 'yellow',
+    textColor: 'purple'
+};
 
-}
-
-
-// Inquirer function
+// Configuration function for Inquirer module
 const promptUser = (types, languages) => {
     return inquirer.prompt([{
         type: 'input',
@@ -77,14 +79,14 @@ const promptUser = (types, languages) => {
         message: 'What languages did you use to build this project? (Check all that apply)',
         choices: languages
     },
-    
+
     // installation inst
     {
         type: 'input',
         name: 'install',
         message: 'What are the installation instructions for the project?',
     },
-    
+
     // usage info
     {
         type: 'input',
@@ -160,32 +162,35 @@ const promptUser = (types, languages) => {
     }
 
     ]);
-}
+};
 
-
-
-// TODO: Create a function to initialize app
+// Initialization function
 function init() {
     getLicenseTypes()
         .then(liscenseTypes => promptUser(liscenseTypes, languages))
         .then(userDataObj => getLicenseText(userDataObj))
         .then(userDataObj => renderFullLicenseText(userDataObj))
         .then(userDataObj => {
-            writeFile('license.txt', userDataObj.fullLicenseText)
-            .then(writeFileResponse => {
-                console.log("");
-                console.log("-----------------------");
-                console.log(writeFileResponse.message);
-            });
+            checkAndMakeDirectory();
+            writeFile('./LICENSE/license.txt', userDataObj.fullLicenseText)
+                .then(writeFileResponse => {
+                    log("");
+                    writeFileResponse.ok ? log(chalk.black.bgGreen(writeFileResponse.message)) : log(chalk.black.bgRed(writeFileResponse.message));
+
+                });
             return userDataObj;
         })
         .then(userDataObj => generateMarkdown(userDataObj))
         .then(response => writeFile('README.md', response))
-        .then(writeFileResponse => console.log(writeFileResponse.message))
+        .then(writeFileResponse => {
+            log("");
+            writeFileResponse.ok ? log(chalk.black.bgGreen(writeFileResponse.message)) : log(chalk.black.bgRed(writeFileResponse.message));
+        })
         .catch(err => console.log(err));
 }
 
-// Function call to initialize app
-log(logo(titles).emptyLine().right('ver 1.0.0').render());
+// Splash Screen
+log(logo(titles).emptyLine().right(`${config.description}`).emptyLine().right(`Ver.: ${config.version}`).render());
 
+// Function call to initialize app
 init();

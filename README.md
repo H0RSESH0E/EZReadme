@@ -1,45 +1,40 @@
 
-# EZ README
-## An application by H0RSESH0E  
+# 56bb63bq
+## An application by bt4  
 &nbsp;  
-[<img src='https://img.shields.io/badge/license-MIT License-blueviolet' alt="user avatar" height="20"/>](#license)  
+[<img src='https://img.shields.io/badge/license-Boost Software License 1.0-blueviolet' alt="user avatar" height="20"/>](#license)  
 &nbsp;&nbsp;  
 ## Table of Contents
 #### [Description](#description)  -  [Installation](#installation)  -  [Usage](#usage) - [License](#license) - [Contributing](#contributing) - [Tests](#tests) - [Questions](#questions)
 &nbsp;  
 ## Description  
- This application is a quick and easy way to generate README.md and license.txt files for any programing application. It includes a default screenshot option, support for license and language badges, integration with GitHub and creation of a separate license.txt file.  
+qb4  
 &nbsp;  
-<img src="./assets/images/screenshot.png" alt="EZ README application screenshot" width="600"/>    
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)   
+<img src="./assets/images/screenshot.png" alt="56bb63bq application screenshot" width="600"/>    
+![Apache Groovy](https://img.shields.io/badge/Apache%20Groovy-4298B8.svg?style=for-the-badge&logo=Apache+Groovy&logoColor=white)   
 &nbsp;  
 ## Installation
-Once the application is live on NPM the following instructions  
+b5w4  
 &nbsp;  
 ## Usage
-will apply: After installing node.js, please use the 'npm init' command followed by 'npm i ezrm'. For the present time installation can be achieved by cloning this repository and installing the necessary modules from npm.  
+qb5  
 &nbsp;  
 ## License  
 
-MIT License
-
-Copyright (c) 2022 H0RSESH0E
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including witho  
-    [ . . . Click here to view the full license attached to this project.](license.txt)  
+**Boost Software License 1.0**  
+A simple permissive license only requiring preservation of copyright and license notices for source (and not binary) distribution. Licensed works, modifications, and larger works may be distributed under different terms and without source code.  
+[View the full license here.](./LICENSE/license.txt)  
 &nbsp;  
 ## Contributing
-There are no special requirements for contribution. Please respect the licensing conditions.  
+qb4qb4  
 &nbsp;  
 ## Tests
-Testing of the program is only manual at this time.  
+qbt4  
 &nbsp;  
 ## Questions
-Questions or concerns about the project or how to contribute to its development can be emailed to: **dcpb777@gmail.com**  
+Questions or concerns about the project or how to contribute to its development can be emailed to: **bt**  
 &nbsp;  
 &nbsp;  
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)  
-<img src="https://github.com/H0RSESH0E.png" alt="user avatar" width="100"/>  
-**[Visit me on GitHub](https://github.com/H0RSESH0E)**  
+<img src="https://github.com/bt4.png" alt="user avatar" width="95"/>  
+**[Visit me on GitHub](https://github.com/bt4)**  

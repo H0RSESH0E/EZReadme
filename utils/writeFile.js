@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// TODO: Create a function to write README file
+// Function to write files as required with file name and content parameters
 const writeFile = (fileName, fileContent) => {
     return new Promise((resolve, reject) => {
       fs.writeFile(`${fileName}`, fileContent, err => {
