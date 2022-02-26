@@ -13,6 +13,8 @@ This application is a quick and easy way to generate README.md and license.txt f
 <img src="./assets/images/screenshot.png" alt="EZ README application screenshot" width="600"/>    
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)   
 &nbsp;  
+[Watch a walkthrough demonstration](https://drive.google.com/file/d/1KQkzSmGSnt8oM9A7SKoeoR2LosIwTd2G/view)  
+&nbsp;  
 ## Installation
 Download or clone the application files from the GitHub repository, install node.js and initialize the directory for npm and download the necessary modules.  
 &nbsp;  
