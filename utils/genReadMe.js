@@ -19,6 +19,7 @@ const renderLicBadge = (licenseType) => {
     return `[<img src='https://img.shields.io/badge/license-${validString}-blueviolet' alt="user avatar" height="20"/>](#license)`
 }
 
+
 const renderLicenseContent = (licenseType, licenseDescription) => {
     var trimmedBody = licenseDescription.substring(0, 250);
     return `
