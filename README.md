@@ -8,7 +8,7 @@
 #### [Description](#description)  -  [Installation](#installation)  -  [Usage](#usage) - [License](#license) - [Contributing](#contributing) - [Tests](#tests) - [Questions](#questions)
 &nbsp;  
 ## Description  
-This application is a quick and easy way to generate README.md and license.txt files for any programing application. It includes a default screenshot option, support for license and language badges, integration with GitHub and creation of a separate license.txt file.  
+This application is a quick and easy way to generate README.md and license.txt files for any programing application. It includes a default screenshot option, support for license and language badges, integration with GitHub and creation of a separate license.txt file.  The app is broken into functional modules and follows DRY coding practices.
 &nbsp;  
 <img src="./assets/images/screenshot.png" alt="EZ README application screenshot" width="600"/>    
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)   
